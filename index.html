@@ -26,6 +26,8 @@
             position: relative;
             z-index: 1;
             text-align: center;
+            padding: 0 10px;
+            max-width: 90%; /* Limita a largura do contêiner */
         }
 
         .top-images {
@@ -52,6 +54,8 @@
             margin-top: 20px;
             z-index: 0;
             padding: 0 10px;
+            text-align: center;
+            word-wrap: break-word; /* Quebra palavras longas */
         }
 
         h1, #buttons {
@@ -84,6 +88,28 @@
             font-size: 16px;
             border: none;
             border-radius: 5px;
+        }
+
+        /* Estilos específicos para telas menores */
+        @media (max-width: 600px) {
+            .container {
+                max-width: 100%;
+                padding: 0 5px;
+            }
+
+            .top-images img {
+                max-width: 80px; /* Ajuste para telas menores */
+            }
+
+            h1 {
+                font-size: 20px; /* Ajuste o tamanho do texto para telas menores */
+            }
+
+            #change, #no {
+                width: 80px; /* Ajuste o tamanho dos botões */
+                height: 50px;
+                font-size: 14px;
+            }
         }
     </style>
 </head>
