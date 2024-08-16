@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teamo</title>
+    <style>
+        body {
+            background-color: pink;
+            color: rgb(255, 0, 0);
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            z-index: 1; /* Coloca a declaração atrás do título e botões */
+        }
+
+        .top-images {
+            display: flex;
+            gap: 15px;
+            opacity: 0; /* Inicia com opacidade 0 */
+            transition: opacity 2s ease; /* Transição suave de opacidade */
+            margin-bottom: 0px;
+        }
+
+        .top-images img {
+            width: 110px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .declaration {
+            opacity: 0; /* Inicia com opacidade 0 */
+            transition: opacity 2s ease; /* Transição suave de opacidade */
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+            margin-top: 20px;
+            z-index: 0; /* Fica atrás dos outros elementos */
+        }
+
+        h1, #buttons {
+            opacity: 1; /* Inicia com opacidade 1 */
+            transition: opacity 2s ease; /* Transição suave de opacidade */
+            text-align: center;
+            z-index: 2; /* Fica acima da declaração */
+            position: relative;
+        }
+
+        h1 {
+            font-size: 30px;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+
+        #buttons {
+            display: flex;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        #change, #no {
+            background-color: red;
+            color: white;
+            width: 100px;
+            height: 80px;
+            text-align: center;
+            cursor: pointer;
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Quatro imagens no topo -->
+        <div id="topImages" class="top-images">
+            <img src="foto1.jpg" alt="Foto 1">
+            <img src="foto2.jpg" alt="Foto 2">
+            <img src="foto3.jpg" alt="Foto 3">
+            <img src="foto4.jpg" alt="Foto 4">
+        </div>
+
+        <!-- Texto de declaração abaixo das imagens -->
+        <div id="declaration" class="declaration">
+            Só queria agradecer por cada momento feliz, por cada riso, cada choro, ue, por cada choro? sim, pq mesmo sendo um momento bom ou ruim, oque me importa é ter você do lado, com você do meu lado eu sinto que posso superar qualquer obstaculo, atingir qualquer meta, alcaçar qualquer sonho, me perdoe pelas vezes que eu sumi e não te dei atenção, estou correndo atrás de um futuro pra nós dois, pq que não me contento com pouco, eu quero muito pra gente, então eu só preciso de ti do meu lado que sei que vou conseguir...Eu te amo muito! Nunca duvide dos meu sentimentos por você,  💖
+        </div>
+    </div>
+
+    <h1 id="header">Quer Namorar Comigo?<br>(E nem tente Recusar!)</h1>
+
+    <div id="buttons">
+        <button id="change">Sim</button>
+        <button id="no">Não</button>
+    </div>
+
+    <script>
+        // Função para mostrar as imagens e o texto de declaração com transição suave
+        document.getElementById("change").onclick = function() {
+            var topImages = document.getElementById("topImages");
+            var declaration = document.getElementById("declaration");
+            var header = document.getElementById("header");
+            var buttons = document.getElementById("buttons");
+
+            // Exibir imagens e texto
+            topImages.style.opacity = "1";
+            declaration.style.opacity = "1";
+
+            // Ocultar header e botões
+            header.style.opacity = "0";
+            buttons.style.opacity = "0";
+
+            // Exibir caixa de diálogo do navegador
+            alert("Agora estamos namorando em Karalho!!! se liga na tua responsa novinha!");
+        };
+
+        // Função para mover o botão "Não" quando clicado
+        document.getElementById("no").onclick = function() {
+            var containerWidth = window.innerWidth - 100;  // Subtraindo a largura do botão
+            var containerHeight = window.innerHeight - 80; // Subtraindo a altura do botão
+            var randomX = Math.floor(Math.random() * containerWidth);
+            var randomY = Math.floor(Math.random() * containerHeight);
+
+            document.getElementById("no").style.position = "absolute";
+            document.getElementById("no").style.left = randomX + "px";
+            document.getElementById("no").style.top = randomY + "px";
+        };
+    </script>
+</body>
+</html>
