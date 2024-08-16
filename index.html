@@ -42,16 +42,16 @@
         }
 
         .top-images img {
-            max-width: 80px; /* Ajustado para telas menores */
+            max-width: 80px;
             height: auto;
-            max-height: 100px; /* Limita a altura máxima */
+            max-height: 100px;
             border-radius: 10px;
         }
 
         .declaration {
             opacity: 0;
             transition: opacity 2s ease;
-            font-size: 14px; /* Ajustado para telas menores */
+            font-size: 14px;
             font-weight: bold;
             margin-top: 10px;
             z-index: 0;
@@ -60,17 +60,41 @@
             word-wrap: break-word;
         }
 
+        /* Estilo para a imagem */
+        #image {
+            opacity: 0;
+            transition: opacity 2s ease;
+            margin-top: 20px;
+            max-width: 320px;
+            max-height: 240px;
+            border-radius: 10px;
+        }
+
+        /* Estilo para o botão "Clique aqui" */
+        #redirectButton {
+            opacity: 0;
+            transition: opacity 2s ease;
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: red;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
         h1, #buttons {
             opacity: 1;
             transition: opacity 2s ease;
             text-align: center;
             z-index: 2;
             position: relative;
-            margin: 20px 0; /* Ajuste a margem */
+            margin: 20px 0;
         }
 
         h1 {
-            font-size: 20px; /* Ajustado para telas menores */
+            font-size: 20px;
             font-weight: bold;
             margin: 10px 0;
         }
@@ -79,22 +103,22 @@
             display: flex;
             gap: 10px;
             margin-top: 20px;
-            flex-direction: row; /* Garante que os botões fiquem lado a lado */
+            flex-direction: row;
         }
 
         #change, #no {
             background-color: red;
             color: white;
-            width: 70px; /* Ajustado para telas menores */
+            width: 70px;
             height: 50px;
             text-align: center;
             cursor: pointer;
-            font-size: 14px; /* Ajustado para telas menores */
+            font-size: 14px;
             border: none;
             border-radius: 5px;
         }
 
-        /* Estilos específicos para telas menores */
+        /* Media queries para telas menores */
         @media (max-width: 600px) {
             .container {
                 max-width: 100%;
@@ -102,28 +126,41 @@
             }
 
             .top-images {
-                margin-bottom: -10px; /* Ajusta a margem inferior para melhor visualização */
+                margin-bottom: -10px;
             }
 
             .top-images img {
-                max-width: 70px; /* Ajusta para melhor visualização em telas pequenas */
+                max-width: 70px;
                 max-height: 90px;
             }
 
             h1 {
-                font-size: 18px; /* Ajusta o tamanho da fonte para telas menores */
-                margin: 15px 0; /* Ajusta a margem superior e inferior */
+                font-size: 18px;
+                margin: 15px 0;
             }
 
             #buttons {
-                flex-direction: column; /* Coloca os botões em coluna em telas menores */
-                gap: 5px; /* Reduz o espaço entre os botões */
+                flex-direction: column;
+                gap: 5px;
             }
 
             #change, #no {
-                width: 70px; /* Ajusta o tamanho dos botões */
+                width: 70px;
                 height: 40px;
-                font-size: 12px; /* Ajusta o tamanho da fonte */
+                font-size: 12px;
+            }
+
+            #image {
+                width: 100%;
+                height: auto;
+                max-width: 90%;
+            }
+
+            #redirectButton {
+                width: 100%;
+                max-width: 90%;
+                padding: 8px 16px;
+                font-size: 12px;
             }
         }
     </style>
@@ -139,8 +176,14 @@
 
         <!-- Texto de declaração abaixo das imagens -->
         <div id="declaration" class="declaration">
-            Só queria agradecer por cada momento feliz, por cada riso, cada choro, ue, por cada choro? sim, pq mesmo sendo um momento bom ou ruim, oque me importa é ter você do lado, com você do meu lado eu sinto que posso superar qualquer obstaculo, atingir qualquer meta, alcaçar qualquer sonho, me perdoe pelas vezes que eu sumi e não te dei atenção, estou correndo atrás de um futuro pra nós dois, pq que não me contento com pouco, eu quero muito pra gente, então eu só preciso de ti do meu lado que sei que vou conseguir...Eu te amo muito! Nunca duvide dos meu sentimentos por você,  💖
+            Só queria agradecer por cada momento feliz, por cada riso, cada choro, ue, por cada choro? sim, pq mesmo sendo um momento bom ou ruim, oque me importa é ter você do lado, com você do meu lado eu sinto que posso superar qualquer obstaculo, atingir qualquer meta, alcaçar qualquer sonho, me perdoe pelas vezes que eu sumi e não te dei atenção, estou correndo atrás de um futuro pra nós dois, pq que não me contento com pouco, eu quero muito pra gente, então eu só preciso de ti do meu lado que sei que vou conseguir...Eu te amo muito! Nunca duvide dos meu sentimentos por você, 💖
         </div>
+
+        <!-- Imagem local abaixo do texto -->
+        <img id="image" src="certificado.jpg" alt="Imagem">
+
+        <!-- Botão "Clique aqui" abaixo da imagem -->
+        <button id="redirectButton" onclick="window.location.href='video.html'">Clique aqui</button>
     </div>
 
     <h1 id="header">Quer Namorar Comigo?<br>(E nem tente Recusar!)</h1>
@@ -150,37 +193,64 @@
         <button id="no">Não</button>
     </div>
 
+    <!-- Áudio que será reproduzido ao clicar em "Não" -->
+    <audio id="audioNo" src="audio/nao.mp3"></audio>
+
+    <!-- Áudio que será reproduzido ao clicar em "Sim" -->
+    <audio id="audioSim" src="audio/aplausos.mp3"></audio>
+
+    <!-- Música ambiente -->
+    <audio id="ambientMusic" src="audio/ambiente.mp3" autoplay loop></audio>
+
     <script>
-        // Função para mostrar as imagens e o texto de declaração com transição suave
+        // Função para mostrar as imagens, o texto de declaração, a imagem e o botão com transição suave
         document.getElementById("change").onclick = function() {
             var topImages = document.getElementById("topImages");
             var declaration = document.getElementById("declaration");
             var header = document.getElementById("header");
             var buttons = document.getElementById("buttons");
+            var image = document.getElementById("image");
+            var redirectButton = document.getElementById("redirectButton");
+            
+            // Tocar o áudio "Sim"
+            var audioSim = document.getElementById("audioSim");
+            audioSim.play();
+            
+            // Tocar a música ambiente
+            var ambientMusic = document.getElementById("ambientMusic");
+            ambientMusic.play();
 
-            // Exibir imagens e texto
+            // Aguardar um tempo curto antes de exibir a caixa de diálogo
+            setTimeout(function() {
+                alert("Agora estamos namorando em Karalho!!! se liga na tua responsa novinha!");
+            }, 500); // 500ms de atraso
+
+            // Exibir imagens, texto, a imagem e o botão
             topImages.style.opacity = "1";
             declaration.style.opacity = "1";
+            image.style.opacity = "1";
+            redirectButton.style.opacity = "1";
 
             // Ocultar header e botões
             header.style.opacity = "0";
             buttons.style.opacity = "0";
-
-            // Exibir caixa de diálogo do navegador
-            alert("Agora estamos namorando em Karalho!!! se liga na tua responsa novinha!");
         };
 
-        // Função para mover o botão "Não" quando clicado
+        // Função para mover o botão "Não" e tocar o áudio
         document.getElementById("no").onclick = function() {
-            var containerWidth = window.innerWidth - 100;  // Subtraindo a largura do botão
-            var containerHeight = window.innerHeight - 100; // Subtraindo a altura do botão
-            var maxOffset = 50; // Distância máxima que o botão pode se mover
+            var containerWidth = window.innerWidth - 100;
+            var containerHeight = window.innerHeight - 100;
+            var maxOffset = 50;
             var randomX = Math.floor(Math.random() * Math.min(containerWidth, maxOffset));
             var randomY = Math.floor(Math.random() * Math.min(containerHeight, maxOffset));
 
             document.getElementById("no").style.position = "absolute";
             document.getElementById("no").style.left = randomX + "px";
             document.getElementById("no").style.top = randomY + "px";
+
+            // Tocar o áudio "Não"
+            var audioNo = document.getElementById("audioNo");
+            audioNo.play();
         };
     </script>
 </body>
