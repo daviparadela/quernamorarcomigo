@@ -67,5 +67,19 @@
             </iframe>
         </div>
     </div>
+    <audio id="ambientMusic" src="audio/ambiente.mp3" loop></audio>
+    <script>
+      // Verificar se a música estava tocando e retomar a reprodução
+      window.onload = function() {
+            var musicPlaying = localStorage.getItem('musicPlaying');
+            if (musicPlaying === 'true') {
+                var ambientMusic = document.getElementById("ambientMusic");
+                ambientMusic.play().catch(function(error) {
+                    console.log("Erro ao tentar tocar a música: " + error);
+                });
+                localStorage.removeItem('musicPlaying'); // Remover a chave após a verificação
+            }
+        };
+    </script>
 </body>
 </html>

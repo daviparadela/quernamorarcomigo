@@ -206,7 +206,7 @@
         <img id="image" src="certificado.jpg" alt="Imagem">
 
         <!-- Botão "Clique aqui" abaixo da imagem -->
-        <button id="redirectButton" onclick="window.location.href='video.html'">Clique aqui</button>
+        <button id="redirectButton" onclick="redirect()">Clique aqui</button>
     </div>
 
     <!-- Pergunta e opções -->
@@ -228,6 +228,12 @@
     <audio id="ambientMusic" src="audio/ambiente.mp3" autoplay loop></audio>
 
     <script>
+          function redirect() {
+            // Salvar o estado da música no localStorage
+            localStorage.setItem('musicPlaying', 'true');
+            window.location.href = 'video.html'; // Redirecionar para a Página 2
+        }
+
         // Função para mostrar as imagens, o texto de declaração, a imagem e o botão com transição suave
         document.getElementById("change").onclick = function() {
             var topImages = document.getElementById("topImages");
