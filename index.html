@@ -32,7 +32,7 @@
 
         .top-images {
             display: flex;
-            gap: 15px;
+            gap: 10px;
             opacity: 0;
             transition: opacity 2s ease;
             margin-bottom: 20px;
@@ -41,17 +41,18 @@
         }
 
         .top-images img {
-            max-width: 100px;
+            max-width: 80px; /* Ajustado para telas menores */
             height: auto;
+            max-height: 100px; /* Limita a altura máxima */
             border-radius: 10px;
         }
 
         .declaration {
             opacity: 0;
             transition: opacity 2s ease;
-            font-size: 16px;
+            font-size: 14px; /* Ajustado para telas menores */
             font-weight: bold;
-            margin-top: 20px;
+            margin-top: 10px;
             z-index: 0;
             padding: 0 10px;
             text-align: center;
@@ -64,11 +65,11 @@
             text-align: center;
             z-index: 2;
             position: relative;
-            margin: 200px 0; /* Ajuste a margem */
+            margin: 20px 0; /* Ajuste a margem */
         }
 
         h1 {
-            font-size: 24px;
+            font-size: 20px; /* Ajustado para telas menores */
             font-weight: bold;
             margin: 10px 0;
         }
@@ -83,11 +84,11 @@
         #change, #no {
             background-color: red;
             color: white;
-            width: 100px;
-            height: 60px;
+            width: 80px; /* Ajustado para telas menores */
+            height: 50px;
             text-align: center;
             cursor: pointer;
-            font-size: 16px;
+            font-size: 14px; /* Ajustado para telas menores */
             border: none;
             border-radius: 5px;
         }
@@ -97,27 +98,31 @@
             .container {
                 max-width: 100%;
                 padding: 0 5px;
-                margin-top: 10px; /* Adiciona margem superior para evitar sobreposição */
+            }
+
+            .top-images {
+                margin-bottom: 10px; /* Ajusta a margem inferior para melhor visualização */
             }
 
             .top-images img {
-                max-width: 80px;
+                max-width: 70px; /* Ajusta para melhor visualização em telas pequenas */
+                max-height: 90px;
             }
 
             h1 {
-                font-size: 20px;
-                margin: 10px 0; /* Ajusta a margem superior e inferior */
-            }
-
-            #change, #no {
-                width: 80px;
-                height: 50px;
-                font-size: 14px;
+                font-size: 18px; /* Ajusta o tamanho da fonte para telas menores */
+                margin: 15px 0; /* Ajusta a margem superior e inferior */
             }
 
             #buttons {
                 flex-direction: column; /* Coloca os botões em coluna em telas menores */
                 gap: 5px; /* Reduz o espaço entre os botões */
+            }
+
+            #change, #no {
+                width: 70px; /* Ajusta o tamanho dos botões */
+                height: 40px;
+                font-size: 12px; /* Ajusta o tamanho da fonte */
             }
         }
     </style>
