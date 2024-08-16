@@ -17,6 +17,7 @@
             flex-direction: column;
             overflow: hidden;
             position: relative;
+            padding: 20px; /* Adicionando padding para melhorar a área clicável */
         }
 
         .container {
@@ -116,6 +117,8 @@
             font-size: 14px;
             border: none;
             border-radius: 5px;
+            z-index: 100; /* Garantir que o botão "Não" esteja acima de outros elementos */
+            position: relative; /* Adiciona posicionamento relativo para que o z-index funcione */
         }
 
         /* Sobreposição e estilo dos elementos de pergunta e opções */
