@@ -29,7 +29,6 @@
             z-index: 1;
             text-align: center;
             padding: 0 10px;
-
         }
 
         .top-images {
@@ -174,9 +173,10 @@
         // Função para mover o botão "Não" quando clicado
         document.getElementById("no").onclick = function() {
             var containerWidth = window.innerWidth - 100;  // Subtraindo a largura do botão
-            var containerHeight = window.innerHeight - 80; // Subtraindo a altura do botão
-            var randomX = Math.floor(Math.random() * containerWidth);
-            var randomY = Math.floor(Math.random() * containerHeight);
+            var containerHeight = window.innerHeight - 100; // Subtraindo a altura do botão
+            var maxOffset = 150; // Distância máxima que o botão pode se mover
+            var randomX = Math.floor(Math.random() * Math.min(containerWidth, maxOffset));
+            var randomY = Math.floor(Math.random() * Math.min(containerHeight, maxOffset));
 
             document.getElementById("no").style.position = "absolute";
             document.getElementById("no").style.left = randomX + "px";
