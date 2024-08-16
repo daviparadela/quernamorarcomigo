@@ -27,7 +27,7 @@
             z-index: 1;
             text-align: center;
             padding: 0 10px;
-            max-width: 90%; /* Limita a largura do contêiner */
+            max-width: 90%;
         }
 
         .top-images {
@@ -41,8 +41,8 @@
         }
 
         .top-images img {
-            max-width: 100px; /* Ajuste para se adaptar ao tamanho do contêiner */
-            height: auto; /* Mantém a proporção da imagem */
+            max-width: 100px;
+            height: auto;
             border-radius: 10px;
         }
 
@@ -55,7 +55,7 @@
             z-index: 0;
             padding: 0 10px;
             text-align: center;
-            word-wrap: break-word; /* Quebra palavras longas */
+            word-wrap: break-word;
         }
 
         h1, #buttons {
@@ -64,18 +64,20 @@
             text-align: center;
             z-index: 2;
             position: relative;
+            margin: 10px 0; /* Ajuste a margem */
         }
 
         h1 {
             font-size: 24px;
             font-weight: bold;
-            margin: 20px 0;
+            margin: 10px 0;
         }
 
         #buttons {
             display: flex;
-            gap: 10px; /* Espaço entre os botões */
+            gap: 10px;
             margin-top: 20px;
+            flex-direction: row; /* Garante que os botões fiquem lado a lado */
         }
 
         #change, #no {
@@ -95,32 +97,38 @@
             .container {
                 max-width: 100%;
                 padding: 0 5px;
+                margin-top: 10px; /* Adiciona margem superior para evitar sobreposição */
             }
 
             .top-images img {
-                max-width: 80px; /* Ajuste para telas menores */
+                max-width: 80px;
             }
 
             h1 {
-                font-size: 20px; /* Ajuste o tamanho do texto para telas menores */
+                font-size: 20px;
+                margin: 10px 0; /* Ajusta a margem superior e inferior */
             }
 
             #change, #no {
-                width: 80px; /* Ajuste o tamanho dos botões */
+                width: 80px;
                 height: 50px;
                 font-size: 14px;
+            }
+
+            #buttons {
+                flex-direction: column; /* Coloca os botões em coluna em telas menores */
+                gap: 5px; /* Reduz o espaço entre os botões */
             }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <!-- Quatro imagens no topo -->
+        <!-- Três imagens no topo -->
         <div id="topImages" class="top-images">
             <img src="foto1.jpg" alt="Foto 1">
             <img src="foto2.jpg" alt="Foto 2">
             <img src="foto3.jpg" alt="Foto 3">
-            
         </div>
 
         <!-- Texto de declaração abaixo das imagens -->
